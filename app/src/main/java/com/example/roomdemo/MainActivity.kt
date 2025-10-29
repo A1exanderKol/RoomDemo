@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -71,20 +72,26 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TitleRow(head1: String, head2: String, head3: String) {
-    Row (
+    Row(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.primary)
             .fillMaxWidth()
             .padding(5.dp)
     ) {
-        Text(head1, color = Color.White,
+        Text(
+            head1, color = Color.White,
             modifier = Modifier
-                .weight(0.1f))
-        Text(head2, color = Color.White,
+                .weight(0.1f)
+        )
+        Text(
+            head2, color = Color.White,
             modifier = Modifier
-                .weight(0.2f))
-        Text(head3, color = Color.White,
-            modifier = Modifier.weight(0.2f))
+                .weight(0.2f)
+        )
+        Text(
+            head3, color = Color.White,
+            modifier = Modifier.weight(0.2f)
+        )
     }
 }
 
@@ -95,8 +102,10 @@ fun ProductRow(id: Int, name: String, quantity: Int) {
             .fillMaxWidth()
             .padding(5.dp)
     ) {
-        Text(id.toString(), modifier = Modifier
-            .weight(0.1f))
+        Text(
+            id.toString(), modifier = Modifier
+                .weight(0.1f)
+        )
         Text(name, modifier = Modifier.weight(0.2f))
         Text(quantity.toString(), modifier = Modifier.weight(0.2f))
     }
@@ -116,12 +125,15 @@ fun CustomTextField(
             keyboardType = keyboardType
         ),
         singleLine = true,
-        label = { Text(title)},
+        label = { Text(title) },
         modifier = Modifier.padding(10.dp),
-        textStyle = TextStyle(fontWeight = FontWeight.Bold,
-            fontSize = 30.sp)
+        textStyle = TextStyle(
+            fontWeight = FontWeight.Bold,
+            fontSize = 30.sp
+        )
     )
 }
+
 @Composable
 fun ScreenSetup(modifier: Modifier = Modifier, viewModel: MainViewModel) {
 
@@ -147,11 +159,11 @@ fun MainScreen(
     var productQuantity by remember { mutableStateOf("") }
     var searching by remember { mutableStateOf(false) }
 
-    val onProductTextChange = { text : String ->
+    val onProductTextChange = { text: String ->
         productName = text
     }
 
-    val onQuantityTextChange = { text : String ->
+    val onQuantityTextChange = { text: String ->
         productQuantity = text
     }
     Column(
@@ -179,7 +191,7 @@ fun MainScreen(
                 .fillMaxWidth()
                 .padding(10.dp)
         ) {
-            Button (onClick = {
+            Button(onClick = {
                 if (productQuantity.isNotEmpty()) {
                     viewModel.insertProduct(
                         Product(
@@ -215,21 +227,24 @@ fun MainScreen(
                 Text("Clear")
             }
         }
-    }
-    LazyColumn (
-        Modifier
-            .fillMaxWidth()
-            .padding(10.dp)
-    ) {
-        val list = if (searching) searchResults else allProducts
 
-        item {
-            TitleRow(head1 = "ID", head2 = "Product", head3 = "Quantity")
-        }
+        LazyColumn(
+            Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+        ) {
+            val list = if (searching) searchResults else allProducts
 
-        items(list) { product ->
-            ProductRow(id = product.id, name = product.productName,
-                quantity = product.quantity)
+            item {
+                TitleRow(head1 = "ID", head2 = "Product", head3 = "Quantity")
+            }
+
+            items(list) { product ->
+                ProductRow(
+                    id = product.id, name = product.productName,
+                    quantity = product.quantity
+                )
+            }
         }
     }
 }
