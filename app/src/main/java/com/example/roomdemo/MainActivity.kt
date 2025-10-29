@@ -53,6 +53,20 @@ fun TitleRow(head1: String, head2: String, head3: String) {
 }
 
 @Composable
+fun ProductRow(id: Int, name: String, quantity: Int) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(5.dp)
+    ) {
+        Text(id.toString(), modifier = Modifier
+            .weight(0.1f))
+        Text(name, modifier = Modifier.weight(0.2f))
+        Text(quantity.toString(), modifier = Modifier.weight(0.2f))
+    }
+}
+
+@Composable
 fun ScreenSetup(modifier: Modifier = Modifier) {
     MainScreen(modifier)
 }
