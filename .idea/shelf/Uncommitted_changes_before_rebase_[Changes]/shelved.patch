@@ -1,0 +1,19 @@
+Index: gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[versions]\r\nagp = \"8.13.0\"\r\nkotlin = \"2.0.21\"\r\ncoreKtx = \"1.10.1\"\r\njunit = \"4.13.2\"\r\njunitVersion = \"1.1.5\"\r\nespressoCore = \"3.5.1\"\r\nlifecycleRuntimeKtx = \"2.6.1\"\r\nactivityCompose = \"1.8.0\"\r\ncomposeBom = \"2024.09.00\"\r\nroomRuntime = \"2.8.3\"\r\nruntimeLivedata = \"1.9.4\"\r\nksp = \"2.1.10-1.0.31\"\r\n\r\n[libraries]\r\nandroidx-core-ktx = { group = \"androidx.core\", name = \"core-ktx\", version.ref = \"coreKtx\" }\r\njunit = { group = \"junit\", name = \"junit\", version.ref = \"junit\" }\r\nandroidx-junit = { group = \"androidx.test.ext\", name = \"junit\", version.ref = \"junitVersion\" }\r\nandroidx-espresso-core = { group = \"androidx.test.espresso\", name = \"espresso-core\", version.ref = \"espressoCore\" }\r\nandroidx-lifecycle-runtime-ktx = { group = \"androidx.lifecycle\", name = \"lifecycle-runtime-ktx\", version.ref = \"lifecycleRuntimeKtx\" }\r\nandroidx-activity-compose = { group = \"androidx.activity\", name = \"activity-compose\", version.ref = \"activityCompose\" }\r\nandroidx-compose-bom = { group = \"androidx.compose\", name = \"compose-bom\", version.ref = \"composeBom\" }\r\nandroidx-compose-ui = { group = \"androidx.compose.ui\", name = \"ui\" }\r\nandroidx-compose-ui-graphics = { group = \"androidx.compose.ui\", name = \"ui-graphics\" }\r\nandroidx-compose-ui-tooling = { group = \"androidx.compose.ui\", name = \"ui-tooling\" }\r\nandroidx-compose-ui-tooling-preview = { group = \"androidx.compose.ui\", name = \"ui-tooling-preview\" }\r\nandroidx-compose-ui-test-manifest = { group = \"androidx.compose.ui\", name = \"ui-test-manifest\" }\r\nandroidx-compose-ui-test-junit4 = { group = \"androidx.compose.ui\", name = \"ui-test-junit4\" }\r\nandroidx-compose-material3 = { group = \"androidx.compose.material3\", name = \"material3\" }\r\nandroidx-runtime-livedata = { group = \"androidx.compose.runtime\", name = \"runtime-livedata\", version.ref = \"runtimeLivedata\" }\r\nandroidx-lifecycle-viewmodel-compose = { group = \"androidx.lifecycle\", name = \"lifecycle-viewmodel-compose\", version.ref = \"lifecycleRuntimeKtx\" }\r\nandroidx-room-ktx = { module = \"androidx.room:room-ktx\", version.ref = \"roomRuntime\" }\r\nandroidx-room-room-compiler = { module = \"androidx.room:room-compiler\", version.ref = \"roomRuntime\" }\r\nandroidx-room-runtime = { module = \"androidx.room:room-runtime\", version.ref = \"roomRuntime\" }\r\n\r\n[plugins]\r\nandroid-application = { id = \"com.android.application\", version.ref = \"agp\" }\r\nkotlin-android = { id = \"org.jetbrains.kotlin.android\", version.ref = \"kotlin\" }\r\nkotlin-compose = { id = \"org.jetbrains.kotlin.plugin.compose\", version.ref = \"kotlin\" }\r\ndevtoolsKsp = { id = \"com.google.devtools.ksp\", version.ref = \"ksp\"}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+--- a/gradle/libs.versions.toml	(revision 18c649adb5ae45a34372db496bb1cd046f9edfdf)
++++ b/gradle/libs.versions.toml	(date 1761751482304)
+@@ -10,7 +10,7 @@
+ composeBom = "2024.09.00"
+ roomRuntime = "2.8.3"
+ runtimeLivedata = "1.9.4"
+-ksp = "2.1.10-1.0.31"
++ksp = "2.0.21-1.0.25"
+ 
+ [libraries]
+ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
